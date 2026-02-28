@@ -1,6 +1,15 @@
 function ServicesChip() {
   const capabilities = [
     { title: "Architecture & Micro-architecture", desc: "Requirements analysis, system & block-level architecture, PPA feasibility." },
+    { title: "Analog & Mixed-Signal IC Design", desc: "Custom analog/mixed-signal blocks, data converters, PLLs, and high-speed interfaces." },
+    {
+      title: "RF",
+      subItems: [
+        "RFIC & Microwave IC Development",
+        "GaN / GaAs MMIC Engineering",
+        "Antenna & RF Front-End Co-Optimization"
+      ]
+    },
     { title: "RTL Design & Integration", desc: "IP/subsystem RTL, SoC integration, low-power techniques." },
     { title: "Verification & Validation", desc: "UVM-based verification, coverage-driven validation." },
     { title: "Physical Design", desc: "Synthesis, place & route, timing closure and sign-off." },
@@ -24,7 +33,15 @@ function ServicesChip() {
           {capabilities.map((cap, index) => (
             <div key={index} className="p-6 bg-white border border-gray-200 rounded-xl card-hover">
               <h4 className="font-semibold text-lg mb-2">{cap.title}</h4>
-              <p className="text-sm text-gray-600">{cap.desc}</p>
+              {cap.subItems ? (
+                <ul className="text-sm text-gray-600 space-y-1 list-disc list-inside pl-1">
+                  {cap.subItems.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-sm text-gray-600">{cap.desc}</p>
+              )}
             </div>
           ))}
         </div>

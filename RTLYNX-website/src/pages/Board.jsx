@@ -36,7 +36,7 @@ function Board() {
                   Co-Founder & Director
                 </div>
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  Soumya is a Chartered Accountant with 15+ years of corporate experience across <strong>Avery Dennison</strong>, <strong>HPE</strong>, <strong>DXC</strong>, and <strong>CGI</strong>.
+                  Soumya is a Chartered Accountant with 15+ years of corporate experience across <strong>CGI</strong>, <strong>DXC</strong>, <strong>HPE</strong>, and <strong>Avery Dennison</strong>.
                 </p>
               </div>
             </div>

@@ -1,4 +1,20 @@
+const CONTACT_EMAIL = "info@rtlynx.com";
+
 function Contact() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name?.value?.trim() || "";
+    const email = form.email?.value?.trim() || "";
+    const company = form.company?.value?.trim() || "";
+    const message = form.message?.value?.trim() || "";
+    const subject = encodeURIComponent("Contact from RTLYNX website");
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`
+    );
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <main className="max-w-7xl mx-auto px-6 py-12 animated-bg">
       <div className="text-center mb-8 animate-fadeIn">
@@ -42,7 +58,7 @@ function Contact() {
         
         <div className="glass rounded-2xl p-8 shadow-xl">
           <h3 className="font-semibold text-2xl mb-4">Send Us a Message</h3>
-          <form action="https://formspree.io/f/your-form-id" method="POST" className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <input 
                 name="name" 
@@ -84,7 +100,7 @@ function Contact() {
               </button>
             </div>
           </form>
-          <p className="mt-4 text-xs text-gray-500 text-center">Or email us directly at <a href="mailto:info@rtlynx.com" className="text-green-600 hover:underline">info@rtlynx.com</a></p>
+          <p className="mt-4 text-xs text-gray-500 text-center">Or email us directly at <a href={`mailto:${CONTACT_EMAIL}`} className="text-green-600 hover:underline">{CONTACT_EMAIL}</a></p>
         </div>
       </section>
 

@@ -280,7 +280,7 @@ function Home() {
             <div>
               <div className="font-semibold text-lg">Soumya Rani Patro</div>
               <div className="text-sm text-green-600 mb-2">Co-Founder & Director</div>
-              <p className="text-sm text-gray-600">Chartered Accountant with 15+ years across Avery Dennison, HPE, DXC and CGI. Expert in financial planning and compliance.</p>
+              <p className="text-sm text-gray-600">Chartered Accountant with 15+ years across CGI, DXC, HPE and Avery Dennison. Expert in financial planning and compliance.</p>
             </div>
           </div>
         </div>
