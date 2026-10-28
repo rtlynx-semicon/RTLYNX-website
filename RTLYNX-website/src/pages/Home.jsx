@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { servicesOverview } from '../data/servicesOverview';
+import { servicesCatalog } from '../data/servicesCatalog';
 
 function Home() {
   // Floating chips positions for background animation
@@ -220,7 +220,7 @@ function Home() {
             <p className="mt-2 text-gray-600 text-lg">Comprehensive engineering services across chip, hardware, systems, security and agentic AI.</p>
           </div>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {servicesOverview.map((service) => (
+            {servicesCatalog.map((service) => (
               <div
                 key={service.link}
                 className="group p-8 bg-white border-l-4 border-green-500 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"

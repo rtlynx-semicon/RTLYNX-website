@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { servicesOverview } from '../data/servicesOverview';
+import { servicesCatalog, getOverviewHighlights } from '../data/servicesCatalog';
 
 function Services() {
   const scrollToTop = () => {
@@ -16,7 +16,7 @@ function Services() {
       </div>
 
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {servicesOverview.map((service) => (
+        {servicesCatalog.map((service) => (
           <Link
             key={service.link}
             to={service.link}
@@ -30,7 +30,7 @@ function Services() {
               {service.description}
             </p>
             <ul className="space-y-2 mb-4">
-              {service.highlights.map((detail) => (
+              {getOverviewHighlights(service.capabilities).map((detail) => (
                 <li key={detail} className="text-sm text-gray-700 flex items-start">
                   <span className="text-green-600 mr-2">•</span>
                   {detail}
