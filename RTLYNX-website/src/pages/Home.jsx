@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { servicesOverview } from '../data/servicesOverview';
 
 function Home() {
   // Floating chips positions for background animation
@@ -219,41 +220,21 @@ function Home() {
             <p className="mt-2 text-gray-600 text-lg">Comprehensive engineering services across chip, hardware, systems, security and agentic AI.</p>
           </div>
           <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          <div className="group p-8 bg-white border-l-4 border-green-500 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <h4 className="font-bold text-xl mb-3 text-gray-900">Chip & Silicon Engineering</h4>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">From architecture to tape-out with industry-leading methodologies.</p>
-            <Link to="/services/chip" className="text-sm text-green-600 font-semibold inline-flex items-center hover:gap-2 transition-all group-hover:text-green-700">
-              Learn more <span className="ml-1">→</span>
-            </Link>
-          </div>
-          <div className="group p-8 bg-white border-l-4 border-green-500 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <h4 className="font-bold text-xl mb-3 text-gray-900">Agentic AI Systems</h4>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">AI agents, workflow automation, and intelligent systems operating across devices and cloud.</p>
-            <Link to="/services/ai" className="text-sm text-green-600 font-semibold inline-flex items-center hover:gap-2 transition-all group-hover:text-green-700">
-              Learn more <span className="ml-1">→</span>
-            </Link>
-          </div>
-          <div className="group p-8 bg-white border-l-4 border-green-500 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <h4 className="font-bold text-xl mb-3 text-gray-900">Hardware Platform Engineering</h4>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">High-density boards, performance-critical designs and compliance testing.</p>
-            <Link to="/services/hardware" className="text-sm text-green-600 font-semibold inline-flex items-center hover:gap-2 transition-all group-hover:text-green-700">
-              Learn more <span className="ml-1">→</span>
-            </Link>
-          </div>
-          <div className="group p-8 bg-white border-l-4 border-green-500 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <h4 className="font-bold text-xl mb-3 text-gray-900">Systems & Embedded Engineering</h4>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">Real-time software, system optimization and productization support.</p>
-            <Link to="/services/embedded" className="text-sm text-green-600 font-semibold inline-flex items-center hover:gap-2 transition-all group-hover:text-green-700">
-              Learn more <span className="ml-1">→</span>
-            </Link>
-          </div>
-          <div className="group p-8 bg-white border-l-4 border-green-500 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <h4 className="font-bold text-xl mb-3 text-gray-900">Secured & Connected Ecosystems</h4>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">Device connectivity, cloud platforms, edge computing, and secure data pipelines.</p>
-            <Link to="/services/connected" className="text-sm text-green-600 font-semibold inline-flex items-center hover:gap-2 transition-all group-hover:text-green-700">
-              Learn more <span className="ml-1">→</span>
-            </Link>
-          </div>
+            {servicesOverview.map((service) => (
+              <div
+                key={service.link}
+                className="group p-8 bg-white border-l-4 border-green-500 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              >
+                <h4 className="font-bold text-xl mb-3 text-gray-900">{service.title}</h4>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">{service.description}</p>
+                <Link
+                  to={service.link}
+                  className="text-sm text-green-600 font-semibold inline-flex items-center hover:gap-2 transition-all group-hover:text-green-700"
+                >
+                  Learn more <span className="ml-1">→</span>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>

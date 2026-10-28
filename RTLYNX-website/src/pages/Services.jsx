@@ -1,78 +1,10 @@
 import { Link } from 'react-router-dom';
+import { servicesOverview } from '../data/servicesOverview';
 
 function Services() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  const services = [
-    {
-      title: "Silicon-to-Systems Signal & Power Integrity Engineering (SI/PI)",
-      description: "Integrated SI and PI engineering across silicon, package, PCB and system interconnects, with simulation, optimization and measurement correlation.",
-      link: "/services/sipi",
-      details: [
-        "Signal Integrity Analysis",
-        "Power Integrity & PDN Analysis",
-        "Die, Package & PCB Co-Design",
-        "Measurement & Correlation"
-      ]
-    },
-    {
-      title: "Chip & Silicon Engineering",
-      description: "Complete silicon development from architecture to tape-out and post-silicon validation.",
-      link: "/services/chip",
-      details: [
-        "Architecture & Micro-architecture",
-        "RTL Design & Integration",
-        "Verification & Validation",
-        "Physical Design & DFT"
-      ]
-    },
-    {
-      title: "Agentic AI Systems",
-      description: "Intelligent agent-based systems that operate autonomously across device, edge, and cloud.",
-      link: "/services/ai",
-      details: [
-        "AI Agent Architecture",
-        "On-Device AI",
-        "Edge AI Systems",
-        "Cloud AI Integration"
-      ]
-    },
-    {
-      title: "Hardware Platform Engineering",
-      description: "High-density, high-performance hardware platforms engineered for reliability and manufacturability.",
-      link: "/services/hardware",
-      details: [
-        "Board Design & Layout",
-        "Signal & Power Integrity",
-        "Thermal Management",
-        "Compliance & Certification"
-      ]
-    },
-    {
-      title: "Systems & Embedded Engineering",
-      description: "Robust embedded systems integrating firmware, RTOS, Linux, and system optimization.",
-      link: "/services/embedded",
-      details: [
-        "Bare-Metal & RTOS Development",
-        "Linux BSP & Drivers",
-        "Boot Loaders & Middleware",
-        "Performance Optimization"
-      ]
-    },
-    {
-      title: "Secured & Connected Ecosystems",
-      description: "Device–Edge–Cloud engineering with built-in security, reliability, and scalability.",
-      link: "/services/connected",
-      details: [
-        "IoT Device & Gateway Engineering",
-        "Edge Computing & Analytics",
-        "Cloud Integration & APIs",
-        "Security & Data Privacy"
-      ]
-    }
-  ];
 
   return (
     <main className="max-w-7xl mx-auto px-6 py-12 animated-bg">
@@ -84,9 +16,9 @@ function Services() {
       </div>
 
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service, index) => (
+        {servicesOverview.map((service) => (
           <Link
-            key={index}
+            key={service.link}
             to={service.link}
             onClick={scrollToTop}
             className="group bg-white rounded-xl p-6 border border-gray-200 hover:border-green-500 hover:shadow-xl transition-all duration-300"
@@ -98,8 +30,8 @@ function Services() {
               {service.description}
             </p>
             <ul className="space-y-2 mb-4">
-              {service.details.map((detail, idx) => (
-                <li key={idx} className="text-sm text-gray-700 flex items-start">
+              {service.highlights.map((detail) => (
+                <li key={detail} className="text-sm text-gray-700 flex items-start">
                   <span className="text-green-600 mr-2">•</span>
                   {detail}
                 </li>
