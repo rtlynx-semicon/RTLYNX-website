@@ -7,6 +7,17 @@ function Services() {
 
   const services = [
     {
+      title: "Silicon-to-Systems Signal & Power Integrity Engineering (SI/PI)",
+      description: "Integrated SI and PI engineering across silicon, package, PCB and system interconnects, with simulation, optimization and measurement correlation.",
+      link: "/services/sipi",
+      details: [
+        "Signal Integrity Analysis",
+        "Power Integrity & PDN Analysis",
+        "Die, Package & PCB Co-Design",
+        "Measurement & Correlation"
+      ]
+    },
+    {
       title: "Chip & Silicon Engineering",
       description: "Complete silicon development from architecture to tape-out and post-silicon validation.",
       link: "/services/chip",

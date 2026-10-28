@@ -33,6 +33,7 @@ function Footer() {
           <div>
             <h4 className="font-semibold text-white mb-2">Services</h4>
             <ul className="text-sm space-y-1">
+              <li><Link to="/services/sipi" onClick={scrollToTop}>Signal & Power Integrity (SI/PI)</Link></li>
               <li><Link to="/services/chip" onClick={scrollToTop}>Chip & Silicon Engineering</Link></li>
               <li><Link to="/services/ai" onClick={scrollToTop}>Agentic AI Systems</Link></li>
               <li><Link to="/services/hardware" onClick={scrollToTop}>Hardware Platform Engineering</Link></li>

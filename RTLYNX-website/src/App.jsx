@@ -10,6 +10,7 @@ import ServicesHardware from './pages/ServicesHardware';
 import ServicesEmbedded from './pages/ServicesEmbedded';
 import ServicesConnected from './pages/ServicesConnected';
 import ServicesAI from './pages/ServicesAI';
+import ServicesSIPI from './pages/ServicesSIPI';
 import Board from './pages/Board';
 import Careers from './pages/Careers';
 import Blogs from './pages/Blogs';
@@ -28,6 +29,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/sipi" element={<ServicesSIPI />} />
           <Route path="/services/chip" element={<ServicesChip />} />
           <Route path="/services/hardware" element={<ServicesHardware />} />
           <Route path="/services/embedded" element={<ServicesEmbedded />} />

@@ -5,7 +5,10 @@ function ServicesHardware() {
     { title: "Embedded Hardware Design", desc: "MCU/SoC boards, FPGA platforms, power design." },
     { title: "Prototyping & Validation", desc: "Schematics, PCB layout, EVT/DVT/PVT testing." },
     { title: "Compliance & Certification", desc: "EMI/EMC, safety, RoHS/REACH." },
-    { title: "Manufacturing Support", desc: "Gerber files, vendor coordination, test-jig design." }
+    { title: "Manufacturing Support", desc: "Gerber files, vendor coordination, test-jig design." },
+    { title: "Mechanical Design", desc: "Mechanical component and assembly design for electronic hardware and integrated systems." },
+    { title: "CAD/CAM Engineering", desc: "3D CAD modeling, engineering drawings and computer-aided manufacturing support for product development." },
+    { title: "Enclosure Design", desc: "Design of electronic enclosures, mechanical packaging and mounting solutions, considering thermal requirements and system integration." }
   ];
 
   return (

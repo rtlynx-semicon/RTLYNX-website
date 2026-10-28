@@ -68,11 +68,14 @@ function Header() {
               </svg>
             </button>
             <div 
-              className={`absolute left-0 mt-3 bg-white border border-gray-200 shadow-lg rounded-lg p-4 w-80 transition-all duration-300 ${
+              className={`absolute left-0 mt-3 bg-white border border-gray-200 shadow-lg rounded-lg p-4 w-96 max-w-[calc(100vw-2rem)] transition-all duration-300 ${
                 servicesOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
               }`}
             >
               <div className="space-y-1">
+                <Link className="block px-4 py-2.5 text-sm hover:bg-gray-50 rounded-md hover:text-green-500 transition-all duration-200" to="/services/sipi" onClick={scrollToTop}>
+                  Silicon-to-Systems Signal & Power Integrity Engineering (SI/PI)
+                </Link>
                 <Link className="block px-4 py-2.5 text-sm hover:bg-gray-50 rounded-md hover:text-green-500 transition-all duration-200" to="/services/chip" onClick={scrollToTop}>
                   Chip & Silicon Engineering
                   </Link>
